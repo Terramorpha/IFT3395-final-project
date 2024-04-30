@@ -1,0 +1,810 @@
+building_id,climate,cooling_type
+1,humid subtropical,mixed mode
+2,humid subtropical,air conditioned
+3,humid midlatitude,air conditioned
+4,humid subtropical,mixed mode
+5,mediterranean,air conditioned
+6,mediterranean,air conditioned
+7,mediterranean,air conditioned
+8,mediterranean,air conditioned
+9,mediterranean,air conditioned
+10,west coast marine,air conditioned
+11,west coast marine,air conditioned
+12,west coast marine,air conditioned
+13,west coast marine,air conditioned
+14,west coast marine,air conditioned
+15,west coast marine,air conditioned
+16,west coast marine,air conditioned
+17,west coast marine,air conditioned
+18,hot arid,air conditioned
+19,hot arid,air conditioned
+20,hot arid,air conditioned
+21,hot arid,air conditioned
+22,hot arid,air conditioned
+23,hot arid,air conditioned
+24,hot arid,air conditioned
+25,hot arid,air conditioned
+26,hot arid,air conditioned
+27,hot arid,air conditioned
+28,hot arid,air conditioned
+29,hot arid,air conditioned
+30,hot arid,air conditioned
+31,hot arid,air conditioned
+32,hot arid,air conditioned
+33,hot arid,air conditioned
+34,hot arid,air conditioned
+35,hot arid,air conditioned
+36,hot arid,air conditioned
+37,hot arid,air conditioned
+38,hot arid,air conditioned
+39,hot arid,air conditioned
+40,hot arid,air conditioned
+41,hot arid,air conditioned
+42,hot arid,air conditioned
+43,hot arid,air conditioned
+44,hot arid,air conditioned
+45,hot arid,air conditioned
+46,hot arid,air conditioned
+47,hot arid,air conditioned
+48,hot arid,air conditioned
+49,hot arid,air conditioned
+50,hot arid,air conditioned
+51,hot arid,air conditioned
+52,hot arid,air conditioned
+53,hot arid,air conditioned
+54,hot arid,air conditioned
+55,hot arid,air conditioned
+56,humid subtropical,air conditioned
+57,humid subtropical,air conditioned
+58,humid subtropical,air conditioned
+59,humid subtropical,air conditioned
+60,humid subtropical,air conditioned
+61,humid subtropical,naturally ventilated
+62,humid subtropical,naturally ventilated
+63,humid subtropical,naturally ventilated
+64,humid subtropical,naturally ventilated
+65,humid subtropical,naturally ventilated
+66,tropical savanna,air conditioned
+67,tropical savanna,air conditioned
+68,tropical savanna,air conditioned
+69,tropical savanna,air conditioned
+70,tropical savanna,air conditioned
+71,tropical savanna,air conditioned
+72,tropical savanna,air conditioned
+73,tropical savanna,air conditioned
+74,tropical savanna,air conditioned
+75,tropical savanna,air conditioned
+76,tropical savanna,air conditioned
+77,tropical savanna,air conditioned
+78,tropical savanna,air conditioned
+79,tropical savanna,air conditioned
+80,tropical savanna,air conditioned
+81,temperature marine,air conditioned
+82,temperature marine,air conditioned
+83,temperature marine,air conditioned
+84,temperature marine,air conditioned
+85,temperature marine,naturally ventilated
+86,temperature marine,naturally ventilated
+87,temperature marine,naturally ventilated
+88,tropical savanna,air conditioned
+89,tropical savanna,air conditioned
+90,tropical savanna,air conditioned
+91,tropical savanna,air conditioned
+92,tropical savanna,air conditioned
+93,tropical savanna,air conditioned
+94,tropical savanna,air conditioned
+95,tropical savanna,air conditioned
+96,tropical savanna,air conditioned
+97,tropical savanna,air conditioned
+98,tropical savanna,air conditioned
+99,tropical savanna,air conditioned
+100,tropical savanna,air conditioned
+101,tropical savanna,air conditioned
+102,tropical savanna,air conditioned
+103,tropical savanna,air conditioned
+104,tropical savanna,air conditioned
+105,tropical savanna,air conditioned
+106,tropical savanna,air conditioned
+107,tropical savanna,air conditioned
+108,tropical savanna,air conditioned
+109,tropical savanna,air conditioned
+110,tropical savanna,air conditioned
+111,continental subarctic,air conditioned
+112,continental subarctic,air conditioned
+113,continental subarctic,air conditioned
+114,continental subarctic,air conditioned
+115,continental subarctic,air conditioned
+116,continental subarctic,air conditioned
+117,continental subarctic,air conditioned
+118,continental subarctic,air conditioned
+119,continental subarctic,air conditioned
+120,continental subarctic,air conditioned
+121,continental subarctic,air conditioned
+122,continental subarctic,air conditioned
+123,continental subarctic,air conditioned
+124,continental subarctic,air conditioned
+125,continental subarctic,air conditioned
+126,continental subarctic,air conditioned
+127,continental subarctic,air conditioned
+128,continental subarctic,air conditioned
+129,continental subarctic,air conditioned
+130,continental subarctic,air conditioned
+131,continental subarctic,air conditioned
+132,continental subarctic,air conditioned
+133,continental subarctic,air conditioned
+134,wet equatorial,air conditioned
+135,wet equatorial,naturally ventilated
+136,tropical savanna,air conditioned
+137,tropical savanna,naturally ventilated
+138,tropical savanna,naturally ventilated
+139,tropical savanna,naturally ventilated
+140,tropical savanna,air conditioned
+141,mediterranean,naturally ventilated
+142,mediterranean,naturally ventilated
+143,mediterranean,naturally ventilated
+144,mediterranean,naturally ventilated
+145,mediterranean,naturally ventilated
+146,mediterranean,naturally ventilated
+147,wet equatorial,air conditioned
+148,wet equatorial,air conditioned
+149,wet equatorial,air conditioned
+150,wet equatorial,air conditioned
+151,wet equatorial,air conditioned
+152,wet equatorial,naturally ventilated
+153,wet equatorial,mixed mode
+154,tropical savanna,naturally ventilated
+155,tropical savanna,naturally ventilated
+156,tropical savanna,naturally ventilated
+157,tropical savanna,naturally ventilated
+158,tropical savanna,air conditioned
+159,tropical savanna,air conditioned
+160,tropical savanna,naturally ventilated
+161,tropical savanna,naturally ventilated
+162,tropical savanna,naturally ventilated
+163,tropical savanna,naturally ventilated
+164,tropical savanna,air conditioned
+165,tropical savanna,air conditioned
+166,tropical wet savanna,naturally ventilated
+167,tropical wet savanna,naturally ventilated
+168,humid midlatitude,air conditioned
+169,humid midlatitude,air conditioned
+170,humid midlatitude,air conditioned
+171,humid midlatitude,air conditioned
+172,desert (hot arid),naturally ventilated
+173,desert (hot arid),naturally ventilated
+174,desert (hot arid),naturally ventilated
+175,semi arid midlatitude,naturally ventilated
+176,semi arid midlatitude,naturally ventilated
+177,desert (hot arid),naturally ventilated
+178,desert (hot arid),naturally ventilated
+179,semi arid high altitude,naturally ventilated
+180,semi arid high altitude,naturally ventilated
+181,west coast marine,naturally ventilated
+182,west coast marine,naturally ventilated
+183,west coast marine,naturally ventilated
+184,hot-summer mediterranean,naturally ventilated
+185,hot-summer mediterranean,air conditioned
+186,hot-summer mediterranean,air conditioned
+187,hot-summer mediterranean,naturally ventilated
+188,hot-summer mediterranean,air conditioned
+189,hot-summer mediterranean,naturally ventilated
+190,hot-summer mediterranean,naturally ventilated
+191,hot-summer mediterranean,air conditioned
+192,hot-summer mediterranean,air conditioned
+193,hot-summer mediterranean,naturally ventilated
+194,hot-summer mediterranean,air conditioned
+195,hot-summer mediterranean,air conditioned
+196,hot-summer mediterranean,naturally ventilated
+197,hot-summer mediterranean,naturally ventilated
+198,hot-summer mediterranean,air conditioned
+199,hot-summer mediterranean,naturally ventilated
+200,humid subtropical,mixed mode
+201,temperate oceanic,mixed mode
+202,humid subtropical,mixed mode
+203,temperate,mixed mode
+204,temperate,naturally ventilated
+205,temperate,mixed mode
+206,temperate,naturally ventilated
+207,temperate,naturally ventilated
+208,temperate,mixed mode
+209,temperate,naturally ventilated
+210,temperate,mixed mode
+211,temperate,naturally ventilated
+212,temperate,naturally ventilated
+213,temperate,naturally ventilated
+214,temperate,mixed mode
+215,temperate,mixed mode
+216,temperate,naturally ventilated
+217,temperate,mixed mode
+218,temperate,mixed mode
+219,temperate,naturally ventilated
+220,temperate,mixed mode
+221,temperate,mixed mode
+222,temperate,naturally ventilated
+223,temperate,mixed mode
+224,temperate,mixed mode
+225,temperate,naturally ventilated
+226,temperate,mixed mode
+227,temperate,mixed mode
+228,temperate,mixed mode
+229,hot semi-arid,naturally ventilated
+230,hot semi-arid,naturally ventilated
+231,hot semi-arid,naturally ventilated
+232,hot semi-arid,naturally ventilated
+233,hot semi-arid,naturally ventilated
+234,hot semi-arid,naturally ventilated
+235,hot semi-arid,mixed mode
+236,hot semi-arid,mixed mode
+237,hot semi-arid,mixed mode
+238,hot semi-arid,mixed mode
+239,hot semi-arid,naturally ventilated
+240,hot semi-arid,naturally ventilated
+241,hot semi-arid,mixed mode
+242,hot semi-arid,mixed mode
+243,hot semi-arid,mixed mode
+244,hot semi-arid,mixed mode
+245,hot semi-arid,mixed mode
+246,hot semi-arid,naturally ventilated
+247,hot semi-arid,mixed mode
+248,hot semi-arid,naturally ventilated
+249,hot semi-arid,mixed mode
+250,hot semi-arid,naturally ventilated
+251,hot semi-arid,naturally ventilated
+252,hot semi-arid,mixed mode
+253,hot semi-arid,naturally ventilated
+254,hot semi-arid,naturally ventilated
+255,hot semi-arid,mixed mode
+256,hot semi-arid,naturally ventilated
+257,hot semi-arid,naturally ventilated
+258,hot semi-arid,naturally ventilated
+259,hot semi-arid,mixed mode
+260,hot semi-arid,mixed mode
+261,hot semi-arid,mixed mode
+262,hot semi-arid,mixed mode
+263,hot semi-arid,mixed mode
+264,hot semi-arid,naturally ventilated
+265,hot semi-arid,naturally ventilated
+266,hot semi-arid,naturally ventilated
+267,hot semi-arid,mixed mode
+268,hot semi-arid,naturally ventilated
+269,hot semi-arid,naturally ventilated
+270,hot semi-arid,mixed mode
+271,hot semi-arid,mixed mode
+272,hot semi-arid,naturally ventilated
+273,hot semi-arid,naturally ventilated
+274,hot semi-arid,naturally ventilated
+275,hot semi-arid,naturally ventilated
+276,hot semi-arid,naturally ventilated
+277,hot semi-arid,naturally ventilated
+278,hot semi-arid,naturally ventilated
+279,hot semi-arid,mixed mode
+280,hot semi-arid,mixed mode
+281,hot semi-arid,naturally ventilated
+282,hot semi-arid,mixed mode
+283,hot semi-arid,mixed mode
+284,hot semi-arid,naturally ventilated
+285,hot semi-arid,naturally ventilated
+286,hot semi-arid,naturally ventilated
+287,hot semi-arid,naturally ventilated
+288,hot semi-arid,naturally ventilated
+289,hot semi-arid,mixed mode
+290,hot semi-arid,naturally ventilated
+291,hot semi-arid,naturally ventilated
+292,hot semi-arid,naturally ventilated
+293,hot semi-arid,naturally ventilated
+294,hot semi-arid,naturally ventilated
+295,hot semi-arid,naturally ventilated
+296,tropical wet savanna,naturally ventilated
+297,tropical wet savanna,naturally ventilated
+298,tropical wet savanna,naturally ventilated
+299,tropical wet savanna,naturally ventilated
+300,tropical wet savanna,naturally ventilated
+301,tropical wet savanna,naturally ventilated
+302,tropical wet savanna,naturally ventilated
+303,tropical wet savanna,mixed mode
+304,tropical wet savanna,naturally ventilated
+305,tropical wet savanna,naturally ventilated
+306,tropical wet savanna,naturally ventilated
+307,tropical wet savanna,naturally ventilated
+308,tropical wet savanna,naturally ventilated
+309,tropical wet savanna,naturally ventilated
+310,tropical wet savanna,naturally ventilated
+311,tropical wet savanna,naturally ventilated
+312,tropical wet savanna,naturally ventilated
+313,tropical wet savanna,naturally ventilated
+314,tropical wet savanna,naturally ventilated
+315,tropical wet savanna,naturally ventilated
+316,tropical wet savanna,naturally ventilated
+317,tropical wet savanna,mixed mode
+318,tropical wet savanna,naturally ventilated
+319,tropical wet savanna,naturally ventilated
+320,tropical wet savanna,naturally ventilated
+321,tropical wet savanna,naturally ventilated
+322,tropical wet savanna,naturally ventilated
+323,tropical wet savanna,naturally ventilated
+324,tropical wet savanna,mixed mode
+325,tropical wet savanna,naturally ventilated
+326,tropical wet savanna,mixed mode
+327,tropical wet savanna,naturally ventilated
+328,tropical wet savanna,naturally ventilated
+329,tropical wet savanna,mixed mode
+330,tropical wet savanna,mixed mode
+331,tropical wet savanna,naturally ventilated
+332,tropical wet savanna,mixed mode
+333,tropical wet savanna,mixed mode
+334,tropical wet savanna,mixed mode
+335,tropical wet savanna,mixed mode
+336,tropical wet savanna,mixed mode
+337,tropical wet savanna,mixed mode
+338,tropical wet savanna,mixed mode
+339,tropical wet savanna,mixed mode
+340,tropical wet savanna,mixed mode
+341,tropical wet savanna,naturally ventilated
+342,tropical wet savanna,mixed mode
+343,tropical wet savanna,mixed mode
+344,tropical wet savanna,naturally ventilated
+345,tropical wet savanna,naturally ventilated
+346,tropical wet savanna,naturally ventilated
+347,tropical wet savanna,mixed mode
+348,tropical wet savanna,mixed mode
+349,tropical wet savanna,naturally ventilated
+350,tropical wet savanna,mixed mode
+351,tropical wet savanna,mixed mode
+352,tropical wet savanna,naturally ventilated
+353,tropical wet savanna,mixed mode
+354,tropical wet savanna,mixed mode
+355,tropical wet savanna,mixed mode
+356,tropical wet savanna,mixed mode
+357,monsoon-influenced humid subtropical,mixed mode
+358,monsoon-influenced humid subtropical,mixed mode
+359,monsoon-influenced humid subtropical,mixed mode
+360,monsoon-influenced humid subtropical,mixed mode
+361,monsoon-influenced humid subtropical,mixed mode
+362,monsoon-influenced humid subtropical,mixed mode
+363,monsoon-influenced humid subtropical,mixed mode
+364,monsoon-influenced humid subtropical,mixed mode
+365,monsoon-influenced humid subtropical,mixed mode
+366,monsoon-influenced humid subtropical,mixed mode
+367,monsoon-influenced humid subtropical,mixed mode
+368,monsoon-influenced humid subtropical,mixed mode
+369,monsoon-influenced humid subtropical,mixed mode
+370,monsoon-influenced humid subtropical,mixed mode
+371,monsoon-influenced humid subtropical,mixed mode
+372,monsoon-influenced humid subtropical,mixed mode
+373,monsoon-influenced humid subtropical,mixed mode
+374,monsoon-influenced humid subtropical,mixed mode
+375,monsoon-influenced humid subtropical,mixed mode
+376,monsoon-influenced humid subtropical,mixed mode
+377,monsoon-influenced humid subtropical,naturally ventilated
+378,monsoon-influenced humid subtropical,mixed mode
+379,monsoon-influenced humid subtropical,mixed mode
+380,monsoon-influenced humid subtropical,mixed mode
+381,monsoon-influenced humid subtropical,mixed mode
+382,monsoon-influenced humid subtropical,mixed mode
+383,monsoon-influenced humid subtropical,mixed mode
+384,tropical wet savanna,mixed mode
+385,tropical wet savanna,naturally ventilated
+386,tropical wet savanna,naturally ventilated
+387,tropical wet savanna,naturally ventilated
+388,tropical wet savanna,naturally ventilated
+389,tropical wet savanna,naturally ventilated
+390,tropical wet savanna,naturally ventilated
+391,tropical wet savanna,mixed mode
+392,tropical wet savanna,mixed mode
+393,tropical wet savanna,naturally ventilated
+394,tropical wet savanna,mixed mode
+395,tropical wet savanna,naturally ventilated
+396,tropical wet savanna,naturally ventilated
+397,tropical wet savanna,naturally ventilated
+398,tropical wet savanna,naturally ventilated
+399,tropical wet savanna,naturally ventilated
+400,tropical wet savanna,naturally ventilated
+401,tropical wet savanna,mixed mode
+402,tropical wet savanna,mixed mode
+403,tropical wet savanna,mixed mode
+404,tropical wet savanna,naturally ventilated
+405,tropical wet savanna,naturally ventilated
+406,tropical wet savanna,naturally ventilated
+407,tropical wet savanna,naturally ventilated
+408,tropical wet savanna,naturally ventilated
+409,tropical wet savanna,naturally ventilated
+410,tropical wet savanna,naturally ventilated
+411,tropical wet savanna,naturally ventilated
+412,tropical wet savanna,naturally ventilated
+413,tropical wet savanna,naturally ventilated
+414,tropical wet savanna,naturally ventilated
+415,tropical wet savanna,naturally ventilated
+416,tropical wet savanna,naturally ventilated
+417,tropical wet savanna,mixed mode
+418,tropical wet savanna,mixed mode
+419,tropical wet savanna,mixed mode
+420,tropical wet savanna,mixed mode
+421,tropical wet savanna,naturally ventilated
+422,tropical wet savanna,naturally ventilated
+423,tropical wet savanna,naturally ventilated
+424,tropical wet savanna,mixed mode
+425,tropical wet savanna,mixed mode
+426,tropical wet savanna,mixed mode
+427,tropical wet savanna,mixed mode
+428,tropical wet savanna,mixed mode
+429,tropical wet savanna,naturally ventilated
+430,tropical wet savanna,naturally ventilated
+431,tropical wet savanna,naturally ventilated
+432,tropical wet savanna,naturally ventilated
+433,tropical wet savanna,naturally ventilated
+434,tropical wet savanna,naturally ventilated
+435,tropical wet savanna,naturally ventilated
+436,tropical wet savanna,naturally ventilated
+437,tropical wet savanna,naturally ventilated
+438,tropical wet savanna,naturally ventilated
+439,tropical wet savanna,naturally ventilated
+440,tropical wet savanna,naturally ventilated
+441,tropical wet savanna,naturally ventilated
+442,tropical wet savanna,naturally ventilated
+443,tropical wet savanna,naturally ventilated
+444,tropical wet savanna,naturally ventilated
+445,tropical wet savanna,mixed mode
+446,tropical wet savanna,mixed mode
+447,tropical wet savanna,naturally ventilated
+448,tropical wet savanna,mixed mode
+449,tropical wet savanna,mixed mode
+450,tropical wet savanna,naturally ventilated
+451,tropical wet savanna,naturally ventilated
+452,tropical wet savanna,naturally ventilated
+453,tropical wet savanna,naturally ventilated
+454,tropical wet savanna,naturally ventilated
+455,tropical wet savanna,naturally ventilated
+456,tropical wet savanna,naturally ventilated
+457,tropical wet savanna,naturally ventilated
+458,tropical wet savanna,naturally ventilated
+459,tropical wet savanna,naturally ventilated
+460,tropical wet savanna,naturally ventilated
+461,tropical wet savanna,naturally ventilated
+462,tropical wet savanna,naturally ventilated
+463,monsoon-influenced temperate oceanic,
+464,monsoon-influenced temperate oceanic,
+465,monsoon-influenced temperate oceanic,
+466,monsoon-influenced temperate oceanic,
+467,monsoon-influenced temperate oceanic,
+468,monsoon-influenced temperate oceanic,
+469,monsoon-influenced temperate oceanic,
+470,monsoon-influenced temperate oceanic,
+471,monsoon-influenced temperate oceanic,
+472,monsoon-influenced temperate oceanic,
+473,monsoon-influenced temperate oceanic,
+474,monsoon-influenced temperate oceanic,
+475,monsoon-influenced temperate oceanic,
+476,monsoon-influenced temperate oceanic,
+477,monsoon-influenced temperate oceanic,
+478,monsoon-influenced temperate oceanic,
+479,monsoon-influenced temperate oceanic,
+480,monsoon-influenced temperate oceanic,
+481,monsoon-influenced temperate oceanic,
+482,monsoon-influenced temperate oceanic,
+483,monsoon-influenced temperate oceanic,
+484,monsoon-influenced temperate oceanic,
+485,monsoon-influenced temperate oceanic,
+486,monsoon-influenced temperate oceanic,
+487,monsoon-influenced temperate oceanic,
+488,monsoon-influenced temperate oceanic,
+489,monsoon-influenced temperate oceanic,
+490,monsoon-influenced temperate oceanic,
+491,monsoon-influenced temperate oceanic,
+492,monsoon-influenced temperate oceanic,
+493,monsoon-influenced temperate oceanic,
+494,monsoon-influenced temperate oceanic,
+495,monsoon-influenced temperate oceanic,
+496,monsoon-influenced temperate oceanic,
+497,monsoon-influenced temperate oceanic,
+498,monsoon-influenced temperate oceanic,
+499,monsoon-influenced temperate oceanic,
+500,monsoon-influenced temperate oceanic,
+501,monsoon-influenced temperate oceanic,
+502,monsoon-influenced temperate oceanic,
+503,monsoon-influenced temperate oceanic,
+504,monsoon-influenced temperate oceanic,
+505,monsoon-influenced temperate oceanic,
+506,monsoon-influenced temperate oceanic,
+507,monsoon-influenced temperate oceanic,
+508,monsoon-influenced temperate oceanic,
+509,monsoon-influenced temperate oceanic,
+510,monsoon-influenced temperate oceanic,
+511,monsoon-influenced temperate oceanic,
+512,monsoon-influenced temperate oceanic,
+513,monsoon-influenced temperate oceanic,
+514,monsoon-influenced temperate oceanic,
+515,monsoon-influenced temperate oceanic,
+516,monsoon-influenced temperate oceanic,
+517,monsoon-influenced temperate oceanic,
+518,monsoon-influenced temperate oceanic,
+519,monsoon-influenced temperate oceanic,
+520,monsoon-influenced temperate oceanic,
+521,monsoon-influenced temperate oceanic,
+522,monsoon-influenced temperate oceanic,
+523,mediterranean,air conditioned
+524,mediterranean,air conditioned
+525,mediterranean,air conditioned
+526,mediterranean,air conditioned
+527,mediterranean,air conditioned
+528,mediterranean,air conditioned
+529,mediterranean,air conditioned
+530,mediterranean,naturally ventilated
+531,mediterranean,naturally ventilated
+532,mediterranean,naturally ventilated
+533,mediterranean,air conditioned
+534,mediterranean,air conditioned
+535,mediterranean,air conditioned
+536,mediterranean,air conditioned
+537,mediterranean,air conditioned
+538,mediterranean,air conditioned
+539,mediterranean,air conditioned
+540,mediterranean,naturally ventilated
+541,mediterranean,naturally ventilated
+542,mediterranean,naturally ventilated
+543,tropical rainforest,air conditioned
+544,tropical rainforest,air conditioned
+545,tropical rainforest,air conditioned
+546,tropical rainforest,air conditioned
+547,west coast marine,naturally ventilated
+548,west coast marine,naturally ventilated
+549,west coast marine,naturally ventilated
+550,west coast marine,naturally ventilated
+551,west coast marine,naturally ventilated
+552,west coast marine,naturally ventilated
+553,west coast marine,naturally ventilated
+554,west coast marine,naturally ventilated
+555,west coast marine,mixed mode
+556,subtropical hot and dry,mixed mode
+557,temperate oceanic,naturally ventilated
+558,tropical wet savanna,naturally ventilated
+559,tropical wet savanna,naturally ventilated
+560,tropical wet savanna,air conditioned
+561,monsoon-influenced hot-summer humid continental,mixed mode
+562,cold semi-arid,naturally ventilated
+563,cold semi-arid,air conditioned
+564,cold semi-arid,naturally ventilated
+565,cold semi-arid,air conditioned
+566,cold semi-arid,naturally ventilated
+567,cold semi-arid,naturally ventilated
+568,hot desert,naturally ventilated
+569,hot desert,air conditioned
+570,hot desert,naturally ventilated
+571,hot desert,naturally ventilated
+572,hot desert,naturally ventilated
+573,hot desert,naturally ventilated
+574,hot desert,air conditioned
+575,hot desert,naturally ventilated
+576,hot desert,naturally ventilated
+577,hot desert,naturally ventilated
+578,hot semi-arid,naturally ventilated
+579,hot semi-arid,air conditioned
+580,hot semi-arid,naturally ventilated
+581,hot semi-arid,air conditioned
+582,hot semi-arid,naturally ventilated
+583,hot semi-arid,air conditioned
+584,hot semi-arid,naturally ventilated
+585,hot-summer mediterranean,naturally ventilated
+586,hot-summer mediterranean,naturally ventilated
+587,hot-summer mediterranean,air conditioned
+588,hot-summer mediterranean,naturally ventilated
+589,hot-summer mediterranean,air conditioned
+590,hot-summer mediterranean,naturally ventilated
+591,tropical monsoon,naturally ventilated
+592,tropical monsoon,naturally ventilated
+593,monsoon-influenced hot-summer humid continental,air conditioned
+594,monsoon-influenced hot-summer humid continental,naturally ventilated
+595,monsoon-influenced hot-summer humid continental,air conditioned
+596,monsoon-influenced hot-summer humid continental,air conditioned
+597,monsoon-influenced hot-summer humid continental,naturally ventilated
+598,humid subtropical,mixed mode
+599,humid subtropical,air conditioned
+600,humid subtropical,mixed mode
+601,humid subtropical,mixed mode
+602,humid subtropical,air conditioned
+603,humid subtropical,mixed mode
+604,humid subtropical,mixed mode
+605,humid subtropical,mixed mode
+606,tropical rainforest,naturally ventilated
+607,hot-summer mediterranean,naturally ventilated
+608,tropical rainforest,naturally ventilated
+609,tropical rainforest,naturally ventilated
+610,tropical rainforest,naturally ventilated
+611,tropical rainforest,naturally ventilated
+612,tropical rainforest,naturally ventilated
+613,tropical rainforest,naturally ventilated
+614,tropical rainforest,naturally ventilated
+615,temperate oceanic,mixed mode
+616,temperate oceanic,mixed mode
+617,humid subtropical,mixed mode
+618,humid subtropical,mixed mode
+619,humid subtropical,mixed mode
+620,humid subtropical,mixed mode
+621,temperate oceanic,naturally ventilated
+622,temperate oceanic,naturally ventilated
+623,warm-summer mediterranean,naturally ventilated
+624,warm-summer mediterranean,naturally ventilated
+625,humid subtropical,naturally ventilated
+626,humid subtropical,naturally ventilated
+627,humid subtropical,
+628,temperate oceanic,mixed mode
+629,temperate oceanic,naturally ventilated
+630,temperate oceanic,mixed mode
+631,temperate oceanic,mixed mode
+632,temperate oceanic,naturally ventilated
+633,hot-summer mediterranean,naturally ventilated
+634,hot-summer mediterranean,naturally ventilated
+635,cool-summer mediterranean,naturally ventilated
+636,cool-summer mediterranean,naturally ventilated
+637,hot semi-arid,naturally ventilated
+638,hot semi-arid,air conditioned
+639,hot semi-arid,mixed mode
+640,hot semi-arid,naturally ventilated
+641,hot semi-arid,air conditioned
+642,hot semi-arid,mixed mode
+643,hot semi-arid,naturally ventilated
+644,hot semi-arid,air conditioned
+645,hot semi-arid,mixed mode
+646,hot semi-arid,naturally ventilated
+647,hot semi-arid,air conditioned
+648,hot semi-arid,mixed mode
+649,hot semi-arid,naturally ventilated
+650,hot semi-arid,air conditioned
+651,hot semi-arid,mixed mode
+652,temperate oceanic,naturally ventilated
+653,tropical wet savanna,air conditioned
+654,tropical wet savanna,mixed mode
+655,tropical wet savanna,air conditioned
+656,tropical wet savanna,mixed mode
+657,hot semi-arid,air conditioned
+658,hot semi-arid,mixed mode
+659,hot semi-arid,naturally ventilated
+660,hot semi-arid,air conditioned
+661,hot semi-arid,mixed mode
+662,hot semi-arid,naturally ventilated
+663,humid subtropical,naturally ventilated
+664,humid subtropical,air conditioned
+665,warm-summer mediterranean,mixed mode
+666,warm-summer mediterranean,mixed mode
+667,humid subtropical,air conditioned
+668,humid subtropical,naturally ventilated
+669,monsoon-influenced hot-summer humid continental,air conditioned
+670,monsoon-influenced hot-summer humid continental,mixed mode
+671,humid subtropical,mixed mode
+672,humid subtropical,mixed mode
+673,humid subtropical,mixed mode
+674,humid subtropical,mixed mode
+675,humid subtropical,
+676,hot semi-arid,mixed mode
+677,hot semi-arid,mixed mode
+678,hot-summer mediterranean,mixed mode
+679,hot-summer mediterranean,naturally ventilated
+680,hot-summer mediterranean,mixed mode
+681,hot-summer mediterranean,naturally ventilated
+682,hot semi-arid,mixed mode
+683,hot semi-arid,naturally ventilated
+684,hot semi-arid,mixed mode
+685,hot semi-arid,naturally ventilated
+686,tropical wet savanna,air conditioned
+687,tropical wet savanna,naturally ventilated
+688,tropical wet savanna,air conditioned
+689,tropical wet savanna,naturally ventilated
+690,tropical wet savanna,air conditioned
+691,tropical wet savanna,naturally ventilated
+692,tropical wet savanna,air conditioned
+693,tropical wet savanna,naturally ventilated
+694,monsoon-influenced humid subtropical,air conditioned
+695,monsoon-influenced humid subtropical,mixed mode
+696,monsoon-influenced humid subtropical,air conditioned
+697,monsoon-influenced humid subtropical,mixed mode
+698,subtropical highland,mixed mode
+699,subtropical highland,naturally ventilated
+700,subtropical highland,mixed mode
+701,subtropical highland,naturally ventilated
+702,humid subtropical,mixed mode
+703,humid subtropical,
+704,temperate oceanic,naturally ventilated
+705,tropical wet savanna,mixed mode
+706,tropical wet savanna,mixed mode
+707,tropical dry savanna,mixed mode
+708,hot desert,mixed mode
+709,hot desert,mixed mode
+710,tropical wet savanna,mixed mode
+711,tropical wet savanna,mixed mode
+712,hot desert,mixed mode
+713,hot desert,mixed mode
+714,tropical rainforest,air conditioned
+715,monsoon-influenced humid subtropical,naturally ventilated
+716,monsoon-influenced humid subtropical,naturally ventilated
+717,monsoon-influenced humid subtropical,naturally ventilated
+718,monsoon-influenced humid subtropical,naturally ventilated
+719,humid subtropical,naturally ventilated
+720,humid subtropical,naturally ventilated
+721,humid subtropical,naturally ventilated
+722,humid subtropical,naturally ventilated
+723,monsoon-influenced humid subtropical,naturally ventilated
+724,monsoon-influenced humid subtropical,naturally ventilated
+725,monsoon-influenced humid subtropical,naturally ventilated
+726,monsoon-influenced humid subtropical,naturally ventilated
+727,temperate oceanic,naturally ventilated
+728,tropical,air conditioned
+729,tropical,mixed mode
+730,tropical,naturally ventilated
+731,temperate,air conditioned
+732,temperate,naturally ventilated
+733,temperate,air conditioned
+734,temperate,naturally ventilated
+735,tropical,air conditioned
+736,tropical,naturally ventilated
+737,tropical,air conditioned
+738,tropical,air conditioned
+739,tropical,air conditioned
+740,temperate oceanic,naturally ventilated
+741,temperate oceanic,mixed mode
+742,temperate oceanic,naturally ventilated
+743,temperate oceanic,air conditioned
+744,temperate oceanic,naturally ventilated
+745,temperate oceanic,mixed mode
+746,temperate oceanic,naturally ventilated
+747,temperate oceanic,air conditioned
+748,temperate oceanic,mixed mode
+749,hot-summer mediterranean,air conditioned
+750,hot-summer mediterranean,naturally ventilated
+751,hot-summer mediterranean,air conditioned
+752,hot-summer mediterranean,mixed mode
+753,hot-summer mediterranean,naturally ventilated
+754,hot-summer mediterranean,air conditioned
+755,hot-summer mediterranean,naturally ventilated
+756,hot-summer mediterranean,air conditioned
+757,hot-summer mediterranean,mixed mode
+758,hot-summer mediterranean,naturally ventilated
+759,hot-summer mediterranean,naturally ventilated
+760,hot-summer mediterranean,naturally ventilated
+761,warm-summer mediterranean,naturally ventilated
+762,warm-summer mediterranean,mixed mode
+763,warm-summer mediterranean,naturally ventilated
+764,warm-summer mediterranean,mixed mode
+765,temperate oceanic,mixed mode
+766,temperate oceanic,air conditioned
+767,temperate oceanic,mixed mode
+768,temperate oceanic,air conditioned
+769,temperate oceanic,air conditioned
+770,temperate oceanic,air conditioned
+771,temperate oceanic,air conditioned
+772,temperate oceanic,air conditioned
+773,temperate oceanic,air conditioned
+774,temperate oceanic,mixed mode
+775,temperate oceanic,naturally ventilated
+776,temperate oceanic,air conditioned
+777,temperate oceanic,mixed mode
+778,temperate oceanic,naturally ventilated
+779,humid subtropical,air conditioned
+780,warm-summer humid continental,naturally ventilated
+781,warm-summer humid continental,naturally ventilated
+782,monsoon-influenced hot-summer humid continental,
+783,monsoon-influenced hot-summer humid continental,
+784,monsoon-influenced hot-summer humid continental,
+785,monsoon-influenced hot-summer humid continental,
+786,monsoon-influenced hot-summer humid continental,
+787,monsoon-influenced hot-summer humid continental,naturally ventilated
+788,monsoon-influenced hot-summer humid continental,naturally ventilated
+789,tropical wet savanna,air conditioned
+790,humid subtropical,naturally ventilated
+791,humid subtropical,air conditioned
+792,humid subtropical,naturally ventilated
+793,humid subtropical,air conditioned
+794,humid subtropical,air conditioned
+795,humid subtropical,naturally ventilated
+796,humid subtropical,air conditioned
+797,tropical monsoon,air conditioned
+798,humid subtropical,mixed mode
+799,humid subtropical,mixed mode
+800,humid subtropical,mixed mode
+801,humid subtropical,mixed mode
+802,humid subtropical,naturally ventilated
+803,humid subtropical,naturally ventilated
+804,humid subtropical,naturally ventilated
+805,humid subtropical,naturally ventilated
+806,hot desert,naturally ventilated
+807,hot desert,naturally ventilated
+808,tropical rainforest,air conditioned
+809,tropical rainforest,air conditioned

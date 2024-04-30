@@ -12,21 +12,112 @@ begin
 	using Flux.Losses # mse
 	using Flux.Functors # custom layers
 	using Flux.MLUtils # contains DataLoader
+	using OneHotArrays
 	using CSV
 	using DataFrames # for loading CSV and table manipulation
 	using LinearAlgebra
 	using Random
 	using Gadfly # plots
-	#using Distri
+	using Distributions # for rand(Normal(), N)
 	using StatsBase
-	using ProgressLogging
+	using ProgressLogging # For @progress loadingbar
 end
 
 # ╔═╡ 3819d045-df58-4c8b-aa59-3ea9fd858bb1
 md"# Data Preprocessing"
 
+# ╔═╡ 6e0e5fe4-0d87-44dd-920c-fce68095c3a3
+function getdata(filename)
+	dst = @__DIR__() * "/" * filename
+	if isfile(dst)
+		dst
+	else
+		url = "https://raw.githubusercontent.com/Terramorpha/IFT3395-final-project/master/" * filename
+		download(url)
+	end
+end
+
 # ╔═╡ 84986e72-41e3-495b-b162-528c0b520071
-data = DataFrame(CSV.File(@__DIR__() * "/ift6390_traindata.csv"))
+data = DataFrame(CSV.File(getdata("ift6390_traindata.csv")))
+
+# ╔═╡ e11d2215-a6d1-4439-a62e-88640fd52aff
+metadata = DataFrame(CSV.File(getdata("ift6390_metadata.csv")))
+
+# ╔═╡ e38a57d8-eb30-4a7d-a394-004aa2d83b85
+Set(metadata.climate)
+
+# ╔═╡ 13716171-384e-48f0-9062-06c268bbfcee
+Set(metadata.cooling_type)
+
+# ╔═╡ be797e44-9a4d-4c40-9f09-ad27c44112fe
+climates = [
+	"wet equatorial"
+	"hot semi-arid"
+	"mediterranean"
+	"tropical rainforest"
+	"west coast marine"
+	"humid midlatitude"
+	"tropical"
+	"cool-summer mediterranean"
+	"hot-summer mediterranean"
+	"hot arid"
+	"humid subtropical"
+	"monsoon-influenced hot-summer humid continental"
+	"warm-summer humid continental"
+	"tropical savanna"
+	"cold semi-arid"
+	"monsoon-influenced humid subtropical"
+	"semi arid high altitude"
+	"tropical monsoon"
+	"semi arid midlatitude"
+	"temperate oceanic"
+	"tropical dry savanna"
+	"hot desert"
+	"subtropical hot and dry"
+	"desert (hot arid)"
+	"warm-summer mediterranean"
+	"tropical wet savanna"
+	"temperature marine"
+	"temperate"
+	"continental subarctic"
+	"subtropical highland"
+	"monsoon-influenced temperate oceanic"
+]
+
+# ╔═╡ 16fde96f-d6c6-4655-84d1-248936da5a27
+coolings = [
+	"air conditioned"
+	"naturally ventilated"
+	"mixed mode"
+]
+
+# ╔═╡ 9d5f07e1-5118-48d9-9baa-0e5f41ef5d05
+Set(metadata.cooling_type)
+
+# ╔═╡ 6aa23cea-1ad3-42e0-a9ff-85dd07a43ab7
+"""
+There is metadata associated to each building. We add this information to each row of the dataset.
+"""
+function augment_data(df)
+	function findclimate(climate)
+		findfirst(climates .== climate)
+	end
+	function findcooling(cooling)
+		if ismissing(cooling)
+			1
+		else
+			1 + findfirst(coolings .== cooling)
+		end
+	end
+	
+	hcat(
+		df, 
+		DataFrame(
+			climate = findclimate.(metadata[df[!, :building_id], :climate]),
+			cooling_type = findcooling.(metadata[df[!, :building_id], :cooling_type]),
+		),
+	)
+end
 
 # ╔═╡ c00e4fbf-3733-4dfb-8a56-33aa75323434
 function prepare_input(df)
@@ -36,6 +127,7 @@ function prepare_input(df)
 		end
 		truc
 	end
+	df = augment_data(df)
 	
 	prepared_data = DataFrame(
 		# Les colonnes qu'on sélectionne pour notre input vector
@@ -49,6 +141,7 @@ function prepare_input(df)
 		iswinter = 1.0*is("winter").(df[!, :season]),
 		iscooldry = 1.0*is("cool/dry").(df[!, :season]),
 		ishotwet = 1.0*is("cool/dry").(df[!, :season]),
+		
 		t_out = coalesce.(df[!, :t_out], -2.0),
 		rh_out = coalesce.(df[!, :rh_out], -2.0),
 		blind_curtain = coalesce.(df[!, :blind_curtain], -2.0),
@@ -60,6 +153,8 @@ function prepare_input(df)
 		tg = coalesce.(df[!, :tg], -2.0),			
 		rh = coalesce.(df[!, :rh], -2.0),
 		vel = coalesce.(df[!, :vel], -2.0),
+		climate = 1.0*df[!, :climate],
+		cooling_type = 1.0*df[!, :cooling_type],
 	)
 	Matrix(prepared_data)'
 end
@@ -187,7 +282,9 @@ end
 
 # ╔═╡ 47a18426-c0e6-4dfb-affa-f29bb4808d36
 begin
+	# When we are not given a base model to augment...
 	function boost(loss, input, output, trainweak; iter=5)
+		# we start with the constant model
 		base = Const(rand(size(output)[1]))
 		data = DataLoader(
 			(input = input,
@@ -208,7 +305,7 @@ begin
 	function boost(f, loss, input, output, trainweak; iter=1)
 		# La prédiction de notre fonction
 		weights = [1.0]
-		funcs = [f]
+		funcs = Any[f]
 		pred = f(input)
 		@progress for i in 1:iter
 			# On calcule le gradient de la fonction pour chaque point de données
@@ -239,11 +336,6 @@ begin
 	end
 end
 
-# ╔═╡ 6a44fa6c-36a5-471b-b1cc-e6b6b6910004
-function loss(pred, target)
-	Losses.crossentropy(softmax(pred), target)
-end
-
 # ╔═╡ b251c9a0-6e53-4eac-bc6a-0958455c5fba
 md"# Regression tree tests"
 
@@ -263,29 +355,47 @@ yŝ = thing(reshape(xs, 1, :))
 let
 	p = plot()
 	push!(p, 
-	layer(x=xs, y=yŝ, Geom.point(), color=["tree"]))
+	layer(x=xs, y=yŝ, Geom.line(), color=["tree"]))
 	push!(p,
-	layer(x=xs, y=ys, Geom.line(), color=["real"]))
+	layer(x=xs, y=ys, Geom.point(), color=["real"]))
 	p
+end
+
+# ╔═╡ 617a6739-f5e7-4f6b-949c-0e7a8471f324
+md"# Validation"
+
+# ╔═╡ 4f85fe49-97ca-47dc-9c2d-8e5eb27a3f04
+function validationset(input, output; trainfrac=0.9)
+	N = size(input)[2] # Le nombre d'échantillons
+	perms = shuffle(1:N)
+	shuffled_input = input[:, perms]
+	shuffled_output = input[:, perms]
+	ninetenths = Int(round(trainfrac*N))
+	
+	train_input = input[:, 1:ninetenths]
+	train_output = output[:, 1:ninetenths]
+
+	test_input = input[:, ninetenths+1:end]
+	test_output = output[:, ninetenths+1:end];
+	(train_input, train_output, test_input, test_output)
 end
 
 # ╔═╡ 7a8a4c00-85b1-45ee-aa82-cd3b2c4bbe7b
 md"# Regression tree training"
 
 # ╔═╡ 742498d1-39b8-4ca4-b07f-1d1f235e0d4e
-#niter = 400
+niter = 1000
+
+# ╔═╡ 17cbba16-f642-4423-bfd9-335478e3558d
+tx, ty, vx, vy = validationset(encoded_train_input, encoded_train_output, trainfrac=0.95)
+
+# ╔═╡ 6a44fa6c-36a5-471b-b1cc-e6b6b6910004
+function loss(pred, target)
+	Losses.crossentropy(softmax(pred), target)
+end
 
 # ╔═╡ 4ddda0b9-4e88-4357-8eb7-3ba65123d12d
-m = boost(loss, encoded_train_input, encoded_train_output, (a,b) -> decision_tree(a,b,max_depth=2), iter=niter)
-
-# ╔═╡ 96796614-0648-4db3-9694-33a38c142bd2
-modes = [
-	(1, [200, 400, 800, 2000]),
-	(2, [100, 200, 400, 800]),
-	(3, [100, 200, 300, 800]),
-	(4, [100, 200, 300, 800]),
-	(5, [100, 200, 300, 800]),
-]
+m = boost(loss, tx, ty, (a,b) -> decision_tree(a,b,max_depth=2), iter=niter)
 
 # ╔═╡ c170cf9d-e3c4-4ed6-bc58-d91de7ab8296
 md"# ensemble de test"
@@ -306,14 +416,41 @@ function countsuccess(m1, m2)
 	sum(s)/size(m1)[2]
 end
 
+# ╔═╡ 59324758-e792-407a-aba1-ba5e30f68f64
+"""Compute the loss of each prefix of the given linear combination of model.
+"""
+function triangleloss(linmod, input, output)
+	approx = linmod.weights[1] * linmod.parts[1](input)
+	losses = []
+	successes = []
+	N = length(linmod.parts)
+	push!(losses, loss(approx, output))
+	for (weight, func) in zip(linmod.weights[2:end], linmod.parts[2:end])
+		approx += weight * func(input)
+		push!(losses, loss(approx, output))
+	end
+	losses
+end
+
+# ╔═╡ b8b776dd-0f44-4537-8916-6cf9013e90cc
+let
+	ysv = triangleloss(m, vx, vy)
+	yst = triangleloss(m, tx, ty)
+	xs = 1:length(ysv)
+	p = plot(Guide.title("validation loss over number of layers (depth = 3)"))
+	push!(p, layer(x=xs, y=ysv, Geom.line(), color=["validation loss"]))
+	push!(p, layer(x=xs, y=yst, Geom.line(), color=["training loss"]))
+	p
+end
+
 # ╔═╡ 850ade5f-51c9-472c-b4c7-9d2789ae9e6c
-success = countsuccess(m(encoded_train_input), encoded_train_output)
+success = countsuccess(m(vx), vy)
 
 # ╔═╡ b243a2cd-fdda-4c84-bb0e-4bf49b426cc3
 jldsave("models/model-$(t()).jld2"; m, niter, success)
 
 # ╔═╡ f56b3dfc-410d-4fbe-91e4-54a16612f449
-test_data = DataFrame(CSV.File(@__DIR__() * "/test.csv"))
+test_data = DataFrame(CSV.File(getdata("test.csv")))
 
 # ╔═╡ fd20a1f3-8c9c-49ac-a938-f5393d2a243b
 encoded_test_input = prepare_input(test_data)
@@ -334,18 +471,17 @@ end
 # ╔═╡ 05363804-3132-423f-9417-6c770237d6f2
 save_submission(m)
 
-# ╔═╡ 01fe8f1d-0d73-437c-b0a0-7debfbc45255
-html"<script>alert(\"yo\");</script>"
-
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
 Gadfly = "c91e804a-d5a3-530f-b6f0-dfbca275c004"
 JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+OneHotArrays = "0b1bfda6-eb8a-41d2-88d8-f5af5cad476f"
 ProgressLogging = "33c8b6b6-d38a-422a-b730-caa89a2f386c"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
@@ -354,9 +490,11 @@ Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
 [compat]
 CSV = "~0.10.14"
 DataFrames = "~1.6.1"
+Distributions = "~0.25.108"
 Flux = "~0.13.17"
 Gadfly = "~1.4.0"
 JLD2 = "~0.4.46"
+OneHotArrays = "~0.2.5"
 ProgressLogging = "~0.1.4"
 StatsBase = "~0.33.21"
 Zygote = "~0.6.69"
@@ -368,7 +506,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.3"
 manifest_format = "2.0"
-project_hash = "423d82b07777cbcdc2563d72046982318c1c1daa"
+project_hash = "d57e73501e7043741c00d6aca192560070793101"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra", "Test"]
@@ -1447,7 +1585,15 @@ version = "17.4.0+0"
 # ╔═╡ Cell order:
 # ╠═aa9bffbd-dced-4039-9082-7c0068748cc7
 # ╠═3819d045-df58-4c8b-aa59-3ea9fd858bb1
+# ╠═6e0e5fe4-0d87-44dd-920c-fce68095c3a3
 # ╠═84986e72-41e3-495b-b162-528c0b520071
+# ╠═e11d2215-a6d1-4439-a62e-88640fd52aff
+# ╠═e38a57d8-eb30-4a7d-a394-004aa2d83b85
+# ╠═13716171-384e-48f0-9062-06c268bbfcee
+# ╠═be797e44-9a4d-4c40-9f09-ad27c44112fe
+# ╠═16fde96f-d6c6-4655-84d1-248936da5a27
+# ╠═9d5f07e1-5118-48d9-9baa-0e5f41ef5d05
+# ╠═6aa23cea-1ad3-42e0-a9ff-85dd07a43ab7
 # ╠═c00e4fbf-3733-4dfb-8a56-33aa75323434
 # ╠═cd1ca3ed-1661-41a8-b630-10ed499fb8c5
 # ╠═55502f9c-df3f-4dc3-baa2-14fcaad1da58
@@ -1463,20 +1609,24 @@ version = "17.4.0+0"
 # ╠═1c6dcaa2-e672-4e65-bb8f-d8ac779386e4
 # ╠═dd580ae6-bee3-4d24-ace8-cd463fb38641
 # ╠═47a18426-c0e6-4dfb-affa-f29bb4808d36
-# ╠═6a44fa6c-36a5-471b-b1cc-e6b6b6910004
 # ╠═b251c9a0-6e53-4eac-bc6a-0958455c5fba
 # ╠═6ba15345-e1bf-4537-bf2f-f8a3b6e9436d
 # ╠═b8cc69da-6d49-4e67-9700-06f975a15db9
 # ╠═e41279fa-9454-4404-acc9-77e6399fbb17
 # ╠═9f4a0ab9-915d-4249-a669-cf92a99255f3
 # ╠═baa46b2c-2f03-427c-b2eb-1f426ea0aa5e
+# ╠═617a6739-f5e7-4f6b-949c-0e7a8471f324
+# ╠═4f85fe49-97ca-47dc-9c2d-8e5eb27a3f04
 # ╠═7a8a4c00-85b1-45ee-aa82-cd3b2c4bbe7b
 # ╠═742498d1-39b8-4ca4-b07f-1d1f235e0d4e
+# ╠═17cbba16-f642-4423-bfd9-335478e3558d
+# ╠═6a44fa6c-36a5-471b-b1cc-e6b6b6910004
 # ╠═4ddda0b9-4e88-4357-8eb7-3ba65123d12d
-# ╠═96796614-0648-4db3-9694-33a38c142bd2
 # ╠═c170cf9d-e3c4-4ed6-bc58-d91de7ab8296
 # ╠═1ecd3a2c-3078-4a52-a10c-c29937305f61
 # ╠═1b78a961-e7ea-4591-86c7-ba6e8ab1838e
+# ╠═59324758-e792-407a-aba1-ba5e30f68f64
+# ╠═b8b776dd-0f44-4537-8916-6cf9013e90cc
 # ╠═850ade5f-51c9-472c-b4c7-9d2789ae9e6c
 # ╠═b243a2cd-fdda-4c84-bb0e-4bf49b426cc3
 # ╠═f56b3dfc-410d-4fbe-91e4-54a16612f449
@@ -1484,6 +1634,5 @@ version = "17.4.0+0"
 # ╠═07d20644-d235-4984-a90e-60bd9931a138
 # ╠═bc947143-8b7e-472f-84cb-ac48c7c082e5
 # ╠═05363804-3132-423f-9417-6c770237d6f2
-# ╠═01fe8f1d-0d73-437c-b0a0-7debfbc45255
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
